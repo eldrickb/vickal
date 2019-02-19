@@ -1,0 +1,36 @@
+//main: ../main.scss
+
+
+button,
+[type="button"],
+.button {
+
+    display: inline-block;
+
+    @include button-base;
+    @include button-style;
+
+    #at-root a.button {
+        link-style: none;
+    }
+
+
+    // Hierarichy variations
+
+
+    &.button-border {
+        @include button-base(2px, none);
+    }
+
+    &.button-text {
+        @include button-base(0, none);
+        @include button-style(transparent, $body-text-color--dark)
+    }
+
+
+    // Color variations
+
+    &.button-secondary {
+        @include button-style(transparent, $body-text-color--dark, $color-secondary)
+    }
+}

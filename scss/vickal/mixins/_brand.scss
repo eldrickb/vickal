@@ -1,0 +1,17 @@
+// main: ../main.scss
+
+
+// text themes
+
+@mixin text-theme($color: "dark") {
+
+    @if $color == "dark" {
+
+        color: rgba($body-text-color--dark, .85);
+    }
+
+    @if $color == "light" {
+
+        color: $body-text-color--light;
+    }
+}

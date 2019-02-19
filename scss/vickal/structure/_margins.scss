@@ -1,0 +1,143 @@
+// main: ../main.scss
+
+@for $i from -2 through 15 {
+
+
+    .mx-#{$i*2}0 {
+        margin-left: $i * 2rem;
+        margin-right: $i * 2rem;
+    }
+
+    .my-#{$i*2}0 {
+        margin-top: $i * 2rem;
+        margin-bottom: $i * 2rem;
+    }
+
+    .ml-#{$i*2}0 {
+        margin-left: $i * 2rem;
+    }
+
+    .mr-#{$i*2}0 {
+        margin-right: $i * 2rem;
+    }
+
+    .mt-#{$i*2}0 {
+        margin-top: $i * 2rem;
+    }
+
+    .mb-#{$i*2}0 {
+        margin-bottom: $i * 2rem;
+    }
+
+
+
+    .mt--10 {
+        margin-top: -1rem;
+    }
+
+
+
+    .px-#{$i*2}0 {
+        padding-left: $i * 2rem;
+        padding-right: $i * 2rem;
+    }
+
+    .py-#{$i*2}0 {
+        padding-top: $i * 2rem;
+        padding-bottom: $i * 2rem;
+    }
+
+    .pl-#{$i*2}0 {
+        padding-left: $i * 2rem;
+    }
+
+    .pr-#{$i*2}0 {
+        padding-right: $i * 2rem;
+    }
+
+    .pt-#{$i*2}0 {
+        padding-top: $i * 2rem;
+    }
+
+    .pb-#{$i*2}0 {
+        padding-bottom: $i * 2rem;
+    }
+}
+
+
+// Generates breakpoint-specific classes for all breakpoints
+@for $x from 1 through 4 {
+
+    $bp: null;
+
+    @if $x == 1 {
+        $bp: "sm";
+    }
+    @if $x == 2 {
+        $bp: "md";
+    }
+    @if $x == 3 {
+        $bp: "lg";
+    }
+    @if $x == 4 {
+        $bp: "xl";
+    }
+
+    @include breakpoint($bp) {
+
+
+        .mx--#{$bp}-0 {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .my--#{$bp}-0 {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .ml--#{$bp}-0 {
+            margin-left: 0 !important;
+        }
+
+        .mr--#{$bp}-0 {
+            margin-right: 0 !important;
+        }
+
+        .mt--#{$bp}-0 {
+            margin-top: 0 !important;
+        }
+
+        .mb--#{$bp}-0 {
+            margin-bottom: 0 !important;
+        }
+
+
+
+        .px--#{$bp}-0 {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .py--#{$bp}-0 {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .pl--#{$bp}-0 {
+            padding-left: 0 !important;
+        }
+
+        .pr--#{$bp}-0 {
+            padding-right: 0 !important;
+        }
+
+        .pt--#{$bp}-0 {
+            padding-top: 0 !important;
+        }
+
+        .pb--#{$bp}-0 {
+            padding-bottom: 0 !important;
+        }
+    }
+}

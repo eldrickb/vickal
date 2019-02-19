@@ -1,0 +1,56 @@
+// main: ../main.scss
+
+@mixin hover($duration: 300ms, $delay: 0) {
+
+    transition: $duration $animation-curve;
+    transition-delay: $delay;
+
+    &:hover {
+        @content;
+    }
+}
+
+@mixin hover-focus($duration: 300ms, $delay: 0) {
+
+    transition: $duration $animation-curve;
+    transition-delay: $delay;
+
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin plain-hover-focus($duration: 300ms, $delay: 0) {
+
+    transition: $duration $animation-curve;
+    transition-delay: $delay;
+
+    &,
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin hover-focus-active($duration: 300ms, $delay: 0) {
+
+    transition: $duration $animation-curve;
+    transition-delay: $delay;
+
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+@mixin focus($duration: 300ms, $delay: 0) {
+
+    transition: $duration $animation-curve;
+    transition-delay: $delay;
+
+    &:focus {
+        @content;
+    }
+}

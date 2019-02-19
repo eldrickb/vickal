@@ -1,0 +1,42 @@
+// main: ../main.scss
+
+@for $i from 1 through 10 {
+
+    .w-#{$i*20} {
+        width: $i * 2rem !important;
+    }
+
+    .h-#{$i*20} {
+        height: $i * 2rem !important;
+    }
+
+    // Generates breakpoint-specific classes for all breakpoints
+    @for $i from 1 through 4 {
+
+        $bp: null;
+
+        @if $i == 1 {
+            $bp: "sm";
+        }
+        @if $i == 2 {
+            $bp: "md";
+        }
+        @if $i == 3 {
+            $bp: "lg";
+        }
+        @if $i == 4 {
+            $bp: "xl";
+        }
+
+        @include breakpoint($bp) {
+
+            .w--#{$bp}-#{$i*20} {
+                width: $i * 2rem !important;
+            }
+
+            .h--#{$bp}-#{$i*20} {
+                height: $i * 2rem !important;
+            }
+        }
+    }
+}

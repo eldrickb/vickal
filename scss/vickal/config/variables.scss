@@ -1,0 +1,287 @@
+// main: ../main.scss
+
+/*
+
+    Global project variables
+
+*/
+
+    /*
+        Vickal 1.0.1
+    */
+
+    $dev: true;
+
+// --
+
+
+
+
+
+
+
+/*
+
+    Colors
+
+*/
+
+
+    // Global brand colors (for your use outside of /scss/vickal)
+
+    $red: #EF3343;
+    $green: #226656;
+    $green-dark: #164137;
+    $blue: #46A4EC;
+    $cream: #EEEAE7;
+    $cream-dark: #ECE4DF;
+    $lavender: #434559;
+    $lavender-dark: #303144;
+
+
+    // Global accent colors within Vickal
+
+    $color-primary: $red;
+    $color-secondary: $green;
+
+
+    // Page colors
+
+    $body-bg-color: white;
+
+
+    // Text  colors
+
+    $body-text-color--dark: $lavender-dark;
+    $body-text-color--light: $cream;
+
+    $mark-color: #FCF8E4;
+
+
+
+// --
+
+
+
+
+
+
+
+/*
+
+    TYPOGRAPHY
+
+*/
+
+    /*
+        Universal properties
+    */
+
+
+
+    // Font antialiasing
+
+    $font-smoothing: true;
+
+
+    // <body> Font sizes
+
+    $font-size--desktop: 2rem;
+    $font-size--mobile: 1.5rem;
+
+
+    // Line Height
+
+    $line-height--base: 1.7;
+
+
+    // Font Families
+
+
+    /*
+        Note: $font-family--base defined in _defaults.scss
+        Defines default OS-specific font-family stack
+    */
+
+    $font-family--body: $font-family--base;
+
+    $font-family--header: $font-family--base;
+    $font-family--display: $font-family--header;
+    $font-family--subheader: $font-family--body;
+
+    $font-family--monospace: monospace;
+
+
+    // Font Weights
+
+
+    $font-weight--bold: 600;
+    $font-weight--medium: 400;
+    $font-weight--light: 300;
+
+    $font-weight--base: $font-weight--medium;
+    $font-weight--header: 700;
+    $font-weight--subheader: $font-weight--bold;
+    $font-weight--display: 700;
+
+
+    // Heading, paragraph elements
+
+    $margin--paragraph: 1.5rem;
+    $margin--header: 3rem;
+
+
+
+
+    /*
+        Specific typogrpahic elements
+    */
+
+
+
+    // Lists
+
+    $ul-style-type: disc;
+    $ol-style-type: decimal;
+
+
+    // links
+
+
+    $link-decoration: underline;
+    $link-hover-decoration: underline;
+
+    @mixin link-style {
+
+        box-shadow: inset 0px -6px 0px 0px rgba(black, 0.35);
+        transition: 300ms $animation-curve filter;
+
+        &:hover {
+            filter: opacity(.8);
+        }
+    }
+
+
+    // Other typography styles
+
+    @mixin subheader-style {
+        opacity: .8;
+    }
+
+// --
+
+
+
+
+
+
+
+/*
+
+    STYLING
+
+*/
+
+
+    $border-radius: .4rem;
+
+
+    // Buttons
+
+
+    // Mixin for base structure of button
+    @mixin button-base ($border-width: 0,
+                        $box-shadow: $shadow-li) {
+
+        box-shadow: $box-shadow;
+        font-weight: $font-weight--bold;
+
+        border: $border-width solid;
+        border-radius: $border-radius;
+
+        padding: 1.6rem 2.4rem; // Medium, default
+
+        &:hover {
+            box-shadow: $shadow-mo;
+        }
+    }
+
+    // Mixin for different button styles
+    @mixin button-style ($color: $color-primary,
+                         $text-color: $body-text-color--dark,
+                         $border-color: transparent) {
+
+        background: $color;
+        border-color: $border-color;
+
+        color: $text-color;
+    }
+
+
+    // Forms
+
+
+    @mixin form-base($color: $color-bg--lightest,
+                     $text-color: $body-text-ccolor--dark)  {
+
+        box-shadow: $shadow-vl;
+    }
+
+
+
+    // Shadow styles
+
+    $shadow-vl: 0 3px 4px -4px rgba(0,0,0,0.25);
+    $shadow-li: 0 3px 6px -3px rgba(0,0,0,0.25);
+    $shadow-mo: null;
+    $shadow-hv: null;
+
+
+    // Animation curve
+
+    $animation-curve: cubic-bezier(.36,.1,.15,.97);
+
+// --
+
+
+
+
+
+
+
+/*
+
+    COMPONENTS
+
+*/
+
+
+    // Tables
+
+    $table-cell-padding: 5px 10px;
+
+// --
+
+
+
+
+
+
+/*
+
+    STRUCTURE
+
+*/
+
+
+    // Grid
+
+    $grid-columns: 12;
+    $grid-column-width: 100vw / $grid-columns;
+
+    // Breakpoints
+
+    $sm: 576px;
+    $md: 768px;
+    $lg: 992px;
+    $xl: 1500px;

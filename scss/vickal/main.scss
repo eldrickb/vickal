@@ -1,0 +1,44 @@
+// main: ../root.scss
+
+
+// config & variables
+
+@import 'config/config';
+@import 'config/variables';
+
+
+// mixins
+
+@import 'mixins/layout';
+@import 'mixins/brand';
+@import 'mixins/animation';
+
+
+// base
+
+/* To define a consistent style that implements Vickal's styling in HTML's default elements, without classes. */
+
+@import 'base/normalize';
+@import 'base/reboot';
+@import 'base/typography';
+@import 'base/buttons';
+
+
+// structure
+
+/* To define classes and elements for use in establishing the overall structure of the page. */
+
+@import 'structure/grid';
+@import 'structure/flex';
+
+@import 'structure/margins';
+@import 'structure/dimmensions';
+@import 'structure/display';
+@import 'structure/heights';
+
+// styling
+
+/* To define classes and elements for use in adding style and customization to th page. */
+
+@import 'style/colors';
+@import 'style/opacity';

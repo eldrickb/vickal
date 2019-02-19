@@ -1,0 +1,57 @@
+// main: ../main.scss
+
+
+// Structural classes
+
+.flex {
+
+    display: flex;
+
+    // self
+
+    &.flex--col {
+        flex-direction: column;
+    }
+
+    &.flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    // children
+
+    @for $i from 1 through 5 {
+        .flex-grow-#{$i} {
+            flex-grow: $i;
+        }
+    }
+}
+
+
+.center--horizontal {
+    display: table;
+    maring-left: auto;
+    maring-right: auto;
+}
+
+.grid {
+    display: grid;
+
+
+    @for $i from 1 through 5 {
+        .grid__collapse-#{$i} {
+            order: $i;
+        }
+
+        @include breakpoint-down(xs) {
+            .grid__collapse--xs-#{$i} {
+                order: $i;
+            }
+        }
+
+        @include breakpoint-down(md) {
+            .grid__collapse--md-#{$i} {
+                order: $i;
+            }
+        }
+    }
+}

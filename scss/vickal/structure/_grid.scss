@@ -1,0 +1,64 @@
+// main: ../main.scss
+
+@for $i from 1 through $grid-columns {
+
+    // columns
+
+    .col-#{$i} {
+        width: $grid-column-width * $i;
+    }
+
+    @include breakpoint(sm) {
+        .col--sm-#{$i} {
+            width: $grid-column-width * $i;
+        }
+    }
+
+    @include breakpoint(md) {
+        html .col--md-#{$i} {
+            width: $grid-column-width * $i;
+        }
+    }
+
+    @include breakpoint(lg) {
+        html body .col--lg-#{$i} {
+            width: $grid-column-width * $i;
+        }
+    }
+
+    @include breakpoint(xl) {
+        html > body .col--xl-#{$i} {
+            width: $grid-column-width * $i;
+        }
+    }
+
+    // offset
+
+    .offset-#{$i} {
+        margin-left: $grid-column-width * $i;
+    }
+
+    @include breakpoint(sm) {
+        .offset--sm-#{$i} {
+            margin-left: $grid-column-width * $i;
+        }
+    }
+
+    @include breakpoint(md) {
+        html .offset--md-#{$i} {
+            margin-left: $grid-column-width * $i;
+        }
+    }
+
+    @include breakpoint(lg) {
+        html body .offset--lg-#{$i} {
+            margin-left: $grid-column-width * $i;
+        }
+    }
+
+    @include breakpoint(xl) {
+        html > body .offset--xl-#{$i} {
+            margin-left: $grid-column-width * $i;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+//main: ../main.scss
+
+// Grid
+
+@function column-calc ($size) {
+    @if $size <= $grid-columns {
+        @return $grid-column-width * $size;
+    }
+
+    @else {
+        @warn "Column size too big";
+    }
+}
+
+@mixin column-sizing ($size) {
+    width: column-calc($size);
+}
+
+@mixin column-offset ($offset, $origin: "left") {
+
+    @if $offset == "center" {
+        margin-left: auto;
+        margin-right: auto;
+    } @else {
+
+        @if $origin == "left" {
+            margin-left: column-calc($offset);
+        }
+
+        @if $origin == "right" {
+            margin-right: column-calc($offset);
+        }
+    }
+}
+
+
+
+// Breakpoints
+
+@mixin breakpoint($class) {
+
+    @if $class == sm {
+        @media only screen and (min-width: $sm) { @content; }
+    }
+
+    @else if $class == md {
+        @media only screen and (min-width: $md) { @content; }
+    }
+
+    @else if $class == lg {
+        @media only screen and (min-width: $lg) { @content; }
+    }
+
+    @else if $class == xl {
+        @media only screen and (min-width: $xl) { @content; }
+    }
+
+    @else {
+        @warn "Breakpoint mixin supports: sm, md, lg, xl";
+    }
+}
+
+@mixin breakpoint-down($class) {
+    @if $class == xs {
+        @media only screen and (max-width: $sm) { @content; }
+    }
+
+    @else if $class == sm {
+        @media only screen and (max-width: $md) { @content; }
+    }
+
+    @else if $class == md {
+        @media only screen and (max-width: $lg) { @content; }
+    }
+
+    @else if $class == lg {
+        @media only screen and (max-width: $xl) { @content; }
+    }
+
+    @else {
+        @warn "Breakpoint-down mixin supports: xs, sm, md, lg";
+    }
+}
+
+
+
+// Float
+
+@mixin clearfix() {
+    &::after {
+    display: block;
+    content: "";
+    clear: both;
+    }
+}
