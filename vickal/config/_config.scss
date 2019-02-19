@@ -11,10 +11,6 @@
 */
 
 
-    // Font Sizes;
-
-    $font-size--base: 10px !default;
-
 
     // Font Families
 
@@ -37,3 +33,27 @@
     $font-family--monospace: monospace;
 
 // --
+
+
+
+
+
+
+/*
+
+    Structure
+
+*/
+
+
+    // Grid
+
+    $grid-columns: 12;
+    $grid-column-width: 100vw / $grid-columns;
+
+    // Breakpoints
+
+    $sm: 576px;
+    $md: 768px;
+    $lg: 992px;
+    $xl: 1500px;

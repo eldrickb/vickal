@@ -1,36 +1,69 @@
 //main: ../main.scss
 
 
+
+
 button,
 [type="button"],
 .button {
 
     display: inline-block;
 
-    @include button-base;
+    @extend .unstyled; // reset style
+
     @include button-style;
 
-    #at-root a.button {
-        link-style: none;
+
+    // defaults to fill button
+    background: $color-primary;
+    color: $color-light;
+    border: none;
+
+
+
+    // Hierarichal variations
+
+    &.button--border {
+        border: $button-style--border $color-primary;
+        color: $color-dark;
+        background: none !important;
     }
 
-
-    // Hierarichy variations
-
-
-    &.button-border {
-        @include button-base(2px, none);
+    &.button--borderless {
+        background: none !important;
+        color: $color-dark;
+        border: none !important;
     }
 
-    &.button-text {
-        @include button-base(0, none);
-        @include button-style(transparent, $body-text-color--dark)
-    }
 
 
     // Color variations
 
-    &.button-secondary {
-        @include button-style(transparent, $body-text-color--dark, $color-secondary)
+    &.button--color-secondary {
+        border-color: $color-secondary;
+        background-color: $color-secondary;
     }
+
+    &.button--color-light {
+        border-color: $color-light;
+        background-color: $color-light;
+
+        color: $color-light;
+
+        &:not(.button--border):not(.button--borderless) {
+            color: $color-dark;
+        }
+    }
+
+    &.button--color-dark {
+        border-color: $color-dark;
+        background-color: $color-dark;
+
+        color: $color-dark;
+
+        &:not(.button--border):not(.button--borderless) {
+            color: $color-light;
+        }
+    }
+
 }

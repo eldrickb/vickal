@@ -10,7 +10,7 @@
         Vickal 1.0.1
     */
 
-    $dev: true;
+    // $dev: true;
 
 // --
 
@@ -29,20 +29,21 @@
 
     // Global brand colors (for your use outside of /scss/vickal)
 
-    $red: #EF3343;
-    $green: #226656;
-    $green-dark: #164137;
     $blue: #46A4EC;
+    $green: #226656;
+    $red: #EF3343;
     $cream: #EEEAE7;
     $cream-dark: #ECE4DF;
     $lavender: #434559;
     $lavender-dark: #303144;
 
 
-    // Global accent colors within Vickal
+    // Global colors used within Vickal
 
-    $color-primary: $red;
+    $color-primary: $blue;
     $color-secondary: $green;
+    $color-light: white;
+    $color-dark: rgb(46, 46, 46);
 
 
     // Page colors
@@ -50,10 +51,10 @@
     $body-bg-color: white;
 
 
-    // Text  colors
+    // Text colors
 
-    $body-text-color--dark: $lavender-dark;
-    $body-text-color--light: $cream;
+    $body-text-color--dark: rgba($color-dark, .8);
+    $body-text-color--light: $color-light;
 
     $mark-color: #FCF8E4;
 
@@ -81,13 +82,14 @@
 
     // Font antialiasing
 
-    $font-smoothing: true;
+    $font-smoothing: false;
 
 
-    // <body> Font sizes
+    // define REM font sizes
 
-    $font-size--desktop: 2rem;
-    $font-size--mobile: 1.5rem;
+    $font-size--xs: 15px; // mobile
+    $font-size--sm: 18px; // big phones - tablets
+    $font-size--lg: 20px; // desktop up
 
 
     // Line Height
@@ -113,7 +115,6 @@
 
 
     // Font Weights
-
 
     $font-weight--bold: 600;
     $font-weight--medium: 400;
@@ -148,9 +149,6 @@
     // links
 
 
-    $link-decoration: underline;
-    $link-hover-decoration: underline;
-
     @mixin link-style {
 
         box-shadow: inset 0px -6px 0px 0px rgba(black, 0.35);
@@ -178,68 +176,68 @@
 
 /*
 
-    STYLING
+    Styling
 
 */
 
-
-    $border-radius: .4rem;
-
-
-    // Buttons
+    /*
+        Universal variables
+    */
 
 
-    // Mixin for base structure of button
-    @mixin button-base ($border-width: 0,
-                        $box-shadow: $shadow-li) {
+    // Shadow styles (light, medium, and heavy)
 
-        box-shadow: $box-shadow;
-        font-weight: $font-weight--bold;
-
-        border: $border-width solid;
-        border-radius: $border-radius;
-
-        padding: 1.6rem 2.4rem; // Medium, default
-
-        &:hover {
-            box-shadow: $shadow-mo;
-        }
-    }
-
-    // Mixin for different button styles
-    @mixin button-style ($color: $color-primary,
-                         $text-color: $body-text-color--dark,
-                         $border-color: transparent) {
-
-        background: $color;
-        border-color: $border-color;
-
-        color: $text-color;
-    }
-
-
-    // Forms
-
-
-    @mixin form-base($color: $color-bg--lightest,
-                     $text-color: $body-text-ccolor--dark)  {
-
-        box-shadow: $shadow-vl;
-    }
-
-
-
-    // Shadow styles
-
-    $shadow-vl: 0 3px 4px -4px rgba(0,0,0,0.25);
     $shadow-li: 0 3px 6px -3px rgba(0,0,0,0.25);
-    $shadow-mo: null;
+    $shadow-md: null;
     $shadow-hv: null;
 
 
     // Animation curve
 
     $animation-curve: cubic-bezier(.36,.1,.15,.97);
+
+
+    // Border radius
+
+    $border-radius: 8px;
+
+
+    /*
+        Styles for various elements
+    */
+
+
+    // Buttons
+
+        // Define a superficial style that applies to all buttons
+    @mixin button-style {
+
+        border-radius: $border-radius;
+        font-size: 1rem;
+        padding: 12px 20px;
+
+        font-weight: $font-weight--bold;
+
+        &.button--small {
+            border-radius: $border-radius;
+            font-size: .8rem;
+            padding: 8px 14px;
+        }
+
+    }
+
+    $button-style--border: 1px solid;
+
+
+    // Forms
+
+    @mixin input {
+
+    }
+
+
+
+
 
 // --
 
@@ -261,27 +259,3 @@
     $table-cell-padding: 5px 10px;
 
 // --
-
-
-
-
-
-
-/*
-
-    STRUCTURE
-
-*/
-
-
-    // Grid
-
-    $grid-columns: 12;
-    $grid-column-width: 100vw / $grid-columns;
-
-    // Breakpoints
-
-    $sm: 576px;
-    $md: 768px;
-    $lg: 992px;
-    $xl: 1500px;
