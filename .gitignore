@@ -1,6 +1,4 @@
 .DS_Store
 
 meta/*
-css/*
-
-scss/root.scss
+test/*
