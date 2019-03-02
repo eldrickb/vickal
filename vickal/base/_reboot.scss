@@ -26,18 +26,6 @@
 }
 
 html {
-    font-size: $font-size--xs;
-
-    @include breakpoint(sm) {
-        font-size: $font-size--sm;
-    }
-
-    @include breakpoint(lg) {
-        font-size: $font-size--lg;
-    }
-
-
-
     font-family: sans-serif; // 2
     line-height: $line-height--base; // 3
     -webkit-text-size-adjust: 100%; // 4
@@ -156,7 +144,7 @@ abbr[data-original-title] {
 }
 
 address {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     font-style: normal;
     line-height: inherit;
 }
@@ -165,7 +153,7 @@ ol,
 ul,
 dl {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 }
 
 ol ol,
@@ -176,16 +164,16 @@ ul ol {
 }
 
 dt {
-    font-weight: $font-weight--bold;
+    font-weight: $fweight-bold;
 }
 
 dd {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
     margin-left: 0; // Undo browser default
 }
 
 blockquote {
-    margin: 0 0 1rem;
+    margin: 0 0 1em;
 }
 
 dfn {
@@ -228,7 +216,7 @@ sup {
 //
 
 a {
-    color: $body-text-color--dark;
+    color: $tcolor-body-dark;
     background-color: transparent; // Remove the gray background on active links in IE 10.
     -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
     text-decoration: none;
@@ -263,7 +251,7 @@ pre,
 code,
 kbd,
 samp {
-    font-family: $font-family--monospace;
+    font-family: $ffam-monospace;
     font-size: 1em; // Correct the odd `em` font sizing in all browsers.
 }
 
@@ -271,7 +259,7 @@ pre {
     // Remove browser default top margin
     margin-top: 0;
     // Reset browser default of `1em` to use `rem`s
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     // Don't allow content to break outside
     overflow: auto;
     // We have @viewport set which causes scrollbars to overlap content in IE11 and Edge, so
@@ -287,7 +275,7 @@ pre {
 
 figure {
     // Apply a consistent margin strategy (matches our type styles).
-    margin: 0 0 1rem;
+    margin: 0 0 1em;
 }
 
 //
@@ -447,8 +435,8 @@ legend {
     width: 100%;
     max-width: 100%; // 1
     padding: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
     line-height: inherit;
     color: inherit; // 2
     white-space: normal; // 1
@@ -517,7 +505,7 @@ template {
 
 hr {
     display: block;
-    margin: 3rem 0;
+    margin: 3em 0;
     height: 1px;
     width: 100%;
 

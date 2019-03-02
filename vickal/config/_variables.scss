@@ -2,7 +2,7 @@
 
 /*
 
-    Global project variables
+    Meta vickal properties
 
 */
 
@@ -25,6 +25,17 @@
     Colors
 
 */
+    :root {
+
+        --text-scale-ratio: 1.2;
+        --font-size: 16px;
+
+        @include breakpoint(md) {
+
+            --text-scale-ratio: 1.3;
+            --font-size: 20px;
+        }
+    }
 
 
     // Global brand colors (for your use outside of /scss/vickal)
@@ -53,8 +64,8 @@
 
     // Text colors
 
-    $body-text-color--dark: rgba($color-dark, .8);
-    $body-text-color--light: $color-light;
+    $tcolor-body-dark: rgba($color-dark, .8);
+    $tcolor-body-light: $color-light;
 
     $mark-color: #FCF8E4;
 
@@ -79,7 +90,6 @@
     */
 
 
-
     // Font antialiasing
 
     $font-smoothing: false;
@@ -87,9 +97,6 @@
 
     // define REM font sizes
 
-    $font-size--xs: 15px; // mobile
-    $font-size--sm: 18px; // big phones - tablets
-    $font-size--lg: 20px; // desktop up
 
 
     // Line Height
@@ -100,36 +107,36 @@
     // Font Families
 
 
-    /*
-        Note: $font-family--base defined in _defaults.scss
+        /*
+        Note: $ffam-base defined in _defaults.scss
         Defines default OS-specific font-family stack
-    */
+        */
 
-    $font-family--body: $font-family--base;
+    $ffam-body: $ffam-base;
 
-    $font-family--header: $font-family--base;
-    $font-family--display: $font-family--header;
-    $font-family--subheader: $font-family--body;
+    $ffam-header: $ffam-base;
+    $ffam-display: $ffam-header;
+    $ffam-subheader: $ffam-body;
 
-    $font-family--monospace: monospace;
+    $ffam-monospace: monospace;
 
 
     // Font Weights
 
-    $font-weight--bold: 600;
-    $font-weight--medium: 400;
-    $font-weight--light: 300;
+    $fweight-bold: 600;
+    $fweight-medium: 400;
+    $fweight-light: 300;
 
-    $font-weight--base: $font-weight--medium;
-    $font-weight--header: 700;
-    $font-weight--subheader: $font-weight--bold;
-    $font-weight--display: 700;
+    $fweight-base: $fweight-medium;
+    $fweight-header: 700;
+    $fweight-subheader: $fweight-bold;
+    $fweight-display: 700;
 
 
     // Heading, paragraph elements
 
-    $margin--paragraph: 1.5rem;
-    $margin--header: 3rem;
+    $margin--paragraph: 1em;
+    $margin--header: 1em;
 
 
 
@@ -213,14 +220,14 @@
     @mixin button-style {
 
         border-radius: $border-radius;
-        font-size: 1rem;
+        font-size: 1em;
         padding: 12px 20px;
 
-        font-weight: $font-weight--bold;
+        font-weight: $fweight-bold;
 
         &.button--small {
             border-radius: $border-radius;
-            font-size: .8rem;
+            font-size: .8em;
             padding: 8px 14px;
         }
 

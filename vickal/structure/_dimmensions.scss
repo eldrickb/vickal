@@ -3,11 +3,11 @@
 @for $i from 1 through 10 {
 
     .w-#{$i*20} {
-        width: $i * 2rem !important;
+        width: $i * 2em !important;
     }
 
     .h-#{$i*20} {
-        height: $i * 2rem !important;
+        height: $i * 2em !important;
     }
 
     // Generates breakpoint-specific classes for all breakpoints
@@ -31,11 +31,11 @@
         @include breakpoint($bp) {
 
             .w--#{$bp}-#{$i*20} {
-                width: $i * 2rem !important;
+                width: $i * 2em !important;
             }
 
             .h--#{$bp}-#{$i*20} {
-                height: $i * 2rem !important;
+                height: $i * 2em !important;
             }
         }
     }

@@ -3,18 +3,102 @@
 
 
 
-
 /*
 
-    Font families and weights
+    Typography variables
 
 */
 
 
-body {
-    font-family: $font-family--body;
-    font-weight: $font-weight--base;
-    color: $body-text-color--dark;
+:root {
+
+    // body text size
+    --fsize-norm: 1em;
+
+    // lesser scale for display and variable body text sizes
+    --text-scale-stunt: calc(var(--text-scale-ratio) * .92);
+
+    @include breakpoint(md) {
+
+        --text-scale-stunt: calc(var(--text-scale-ratio) * .9);
+    }
+
+
+    // variable body text sizes
+
+    --fsize-xs: calc(1em / var(--text-scale-stunt)
+                      / var(--text-scale-stunt));
+
+    --fsize-sm: calc(1em / var(--text-scale-stunt));
+
+    --fsize-lg: calc(1em * var(--text-scale-stunt));
+
+    --fsize-xl: calc(1em * var(--text-scale-stunt)
+                      * var(--text-scale-stunt));
+
+
+    // heading sizes
+
+    --fsize-h5: calc(1em * var(--text-scale-ratio));
+
+    --fsize-h4: calc(1em * var(--text-scale-ratio)
+                      * var(--text-scale-ratio));
+
+    --fsize-h3: calc(1em * var(--text-scale-ratio)
+                      * var(--text-scale-ratio)
+                      * var(--text-scale-ratio));
+
+    --fsize-h2: calc(1em * var(--text-scale-ratio)
+                      * var(--text-scale-ratio)
+                      * var(--text-scale-ratio)
+                      * var(--text-scale-ratio));
+
+    --fsize-h1: calc(1em * var(--text-scale-ratio)
+                      * var(--text-scale-ratio)
+                      * var(--text-scale-ratio)
+                      * var(--text-scale-ratio)
+                      * var(--text-scale-ratio));
+
+    // display sizes
+
+    --fsize-d4: calc(var(--fsize-h1)
+
+                      * var(--text-scale-stunt));
+
+
+    --fsize-d3: calc(var(--fsize-h1)
+
+                      * var(--text-scale-stunt)
+                      * var(--text-scale-stunt));
+
+    --fsize-d2: calc(var(--fsize-h1)
+
+                      * var(--text-scale-stunt)
+                      * var(--text-scale-stunt)
+                      * var(--text-scale-stunt));
+
+    --fsize-d1: calc(var(--fsize-h1)
+
+                      * var(--text-scale-stunt)
+                      * var(--text-scale-stunt)
+                      * var(--text-scale-stunt)
+                      * var(--text-scale-stunt));
+}
+
+
+
+
+/*
+
+    Font families and weight
+
+*/
+
+
+body, .fstyle-body {
+    font-family: $ffam-body;
+    font-weight: $fweight-base;
+    color: $tcolor-body-dark;
 }
 
 
@@ -24,10 +108,10 @@ h3,
 h4,
 h5,
 h6,
-.style-header {
+.fstyle-header {
     font: {
-        weight: $font-weight--header;
-        family: $font-family--header;
+        weight: $fweight-header;
+        family: $ffam-header;
     }
 }
 
@@ -35,8 +119,8 @@ h6,
     display: block;
 
     font: {
-        weight: $font-weight--subheader;
-        family: $font-family--subheader;
+        weight: $fweight-subheader;
+        family: $ffam-subheader;
     }
 
     @include subheader-style;
@@ -48,8 +132,8 @@ h6,
 .display-3,
 .display-4 {
     font: {
-        weight: $font-weight--display;
-        family: $font-family--display;
+        weight: $fweight-display;
+        family: $ffam-display;
     }
 }
 
@@ -57,18 +141,18 @@ h6,
 b,
 strong,
 .bold {
-    font-weight: $font-weight--bold;
+    font-weight: $fweight-bold;
 }
 
 
 // Misc weight modifiers
 
-.weight-light {
-    font-weight: $font-weight--light;
+.fweight-light {
+    font-weight: $fweight-light;
 }
 
-.weight-medium {
-    font-weight: $font-weight--medium;
+.fweight-medium {
+    font-weight: $fweight-medium;
 }
 
 
@@ -76,84 +160,90 @@ strong,
 
 /*
 
-    Font sizes and line heights
+    Font sizes and line heightext-size
 
  */
 
+html {
+    font-size: var(--font-size);
+}
 
-// Mobile font sizes
+body {
+    font-size: 1em;
+}
+
 
 
 .display-1 {
-    font-size: 4.8rem;
+    font-size: var(--fsize-d1);
     line-height: 1;
 }
 .display-2 {
-    font-size: 4.4rem;
+    font-size: var(--fsize-d2);
     line-height: 1;
 }
 .display-3 {
-    font-size: 4rem;
+    font-size: var(--fsize-d3);
     line-height: 1;
 }
 .display-4 {
-    font-size: 3.6rem;
+    font-size: var(--fsize-d4);
     line-height: 1.1;
 }
 
 h1,
-.size-h2 {
-    font-size: 3.2rem;
+.fsize-h2 {
+    font-size: var(--fsize-h1);
     line-height: 1.1;
 }
 h2,
-.size-h2 {
-    font-size: 2.4rem;
+
+.fsize-h2 {
+    font-size: var(--fsize-h2);
     line-height: 1.2;
 }
 h3,
-.size-h3 {
-    font-size: 1.8rem;
+.fsize-h3 {
+    font-size: var(--fsize-h3);
     line-height: 1.3;
 }
 h4,
-.size-h4 {
-    font-size: 1.45rem;
+.fsize-h4 {
+    font-size: var(--fsize-h4);
     line-height: 1.4;
 }
 h5,
-.size-h5 {
-    font-size: 1.15rem;
+.fsize-h5 {
+    font-size: var(--fsize-h5);
     line-height: 1.4;
 }
 h6,
-.size-h6 {
-    font-size: inherit;
+.fsize-h6 {
+    font-size: var(--fsize-norm);
     line-height: 1.6;
 }
 
 
-.size-huge {
-    font-size: 1.25rem;
+.fsize-xl {
+    font-size: var(--fsize-xl);
 }
 
-.size-big {
-    font-size: 1.15rem;
+.fsize-lg {
+    font-size: var(--fsize-lg);
 }
 
-.size-small {
-    font-size: 0.8rem;
+.fsize-sm {
+    font-size: var(--fsize-sm);
 }
 
-.size-tiny {
-    font-size: 0.7rem;
+.fsize-xs {
+    font-size: var(--fsize-xs);
 }
-
 
 
 // Relevant modifiers
 
-.size-inherit {
+.fsize-inherit {
     font-size: inherit;
 }
 
@@ -162,7 +252,7 @@ h6,
 
 /*
 
-    Lists
+    Listext-size
 
 */
 
@@ -170,11 +260,11 @@ h6,
 ul,
 ol {
 
-    list-style-position: outside;
+    list-style-position: outext-sizeide;
 
 
     li {
-        margin-top: .6rem;
+        margin-top: .6em;
     }
 
     &.list--inline {
@@ -200,7 +290,7 @@ ol {
 
 /*
 
-    Misc typography elements
+    Misc typography elementext-size
 
 */
 
@@ -227,13 +317,15 @@ mark {
 }
 
 a {
-
-    &:not(.button)
+    &:not(.button),
     &:not(.unstyled) {
 
         @include link-style;
     }
+}
 
+small {
+    font-size: .9em;
 }
 
 

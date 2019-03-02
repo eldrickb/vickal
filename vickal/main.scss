@@ -1,4 +1,4 @@
-// main: ../test/css/root.scss
+// main: ../test/root.scss
 
 
 
@@ -47,10 +47,10 @@
     Defines classes and elements for use in establishing the overall structure of the page.
 */
 
-@import 'structure/grid';
-@import 'structure/flex';
+@import 'structure/layout';
+@import 'structure/flex_grid';
 
-@import 'structure/margins';
+@import 'structure/margin_padding';
 @import 'structure/dimmensions';
 @import 'structure/display';
 @import 'structure/heights';

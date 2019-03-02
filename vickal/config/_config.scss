@@ -14,7 +14,7 @@
 
     // Font Families
 
-    $font-family--base:
+    $ffam-base:
       // Safari for OS X and iOS (San Francisco)
       -apple-system,
       // Chrome < 56 for OS X (San Francisco)
@@ -27,10 +27,10 @@
       "Helvetica Neue", Arial, sans-serif,
       // Emoji fonts
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-    $font-family--header: $font-family--base !default;
-    $font-family--subheader: $font-family--base !default;
-    $font-family--display: $font-family--base !default;
-    $font-family--monospace: monospace;
+    $ffam-header: $ffam-base !default;
+    $ffam-subheader: $ffam-base !default;
+    $ffam-display: $ffam-base !default;
+    $ffam-monospace: monospace;
 
 // --
 
