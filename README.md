@@ -2,8 +2,9 @@
 
 ### fickle + vital
 
-Lightweight, utility-first, customizable, mobile-first CSS framework
+Lightweight, customizable, utility focused, mobile-first CSS framework
 
+Made before I discovered [tailwindcss](https://tailwindcss.com/) <3 existed
 
 **Features**
 
